@@ -93,6 +93,7 @@ function addInputField(parentID, fieldID, fieldPlaceholder) {
 // Executes the changes to the DOM and catches user's input for new books.
 btn.addEventListener('click', () => {
 	// Removes the "Add a New Book" button
+	
 	btn.parentNode.removeChild(btn);
 
 	// Finds #newBook div and adds a new form into it.
@@ -114,7 +115,6 @@ btn.addEventListener('click', () => {
 	submitBtn.textContent = "Add Book";
 	form.appendChild(submitBtn);
 
-	// Adds user input to myLibrary and resets form area
 	submitBtn.addEventListener('click', () => {
 		console.log(titleInput);
 		myLibrary.push(new Book(titleInput.value, authorInput.value, pageCountInput.value, haveReadInput.value));

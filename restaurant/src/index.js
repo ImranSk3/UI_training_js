@@ -11,7 +11,7 @@ function addNavEvents() {
   const contactLink = document.getElementById("contact");
 
   // add event listeners
-
+ 
   homeLink.addEventListener('click', red);
   homeLink.addEventListener('click', home);
 
