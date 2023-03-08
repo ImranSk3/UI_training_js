@@ -25,7 +25,7 @@ function showBook(arrayIndex) {
 	p.textContent = `${myLibrary[arrayIndex].title} by ${myLibrary[arrayIndex].author}, ${myLibrary[arrayIndex].pageCount} pages, ${myLibrary[arrayIndex].haveRead === true ? "Finished" : "Not Finished"}`;
 	newCard.appendChild(p);
 
-	// Creates and powers the read/not read button
+	// Creates  the read/not read button
 	const readBtn = document.createElement('button');
 	readBtn.type = "button";
 	readBtn.textContent = "Read?";
@@ -41,15 +41,15 @@ function showBook(arrayIndex) {
 	deleteBtn.textContent = "Delete";
 	deleteBtn.addEventListener('click', () => {
 		// Removes the deleted book from myLibrary
+		
 		arrayIndex = myLibrary.findIndex(x => x.title === this.title);
+
 		myLibrary.splice(arrayIndex, 1);
 
 		// Remove book card from HTML
 		newCard.parentNode.removeChild(newCard);
 
-		// All the book cards have retained their arrayIndex in memory.
-		// This is causing a bug!
-		// Update arrayIndeces in HTML
+		// All the book cards have retained their arrayIndex in memory.Update arrayIndeces in HTML
 		bookCards = Array.from(document.querySelector("#container").childNodes);
 		bookCards.shift();
 		console.log(bookCards);
@@ -93,7 +93,7 @@ function addInputField(parentID, fieldID, fieldPlaceholder) {
 // Executes the changes to the DOM and catches user's input for new books.
 btn.addEventListener('click', () => {
 	// Removes the "Add a New Book" button
-	
+	debugger
 	btn.parentNode.removeChild(btn);
 
 	// Finds #newBook div and adds a new form into it.
